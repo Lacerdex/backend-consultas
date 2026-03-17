@@ -32,4 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-data/consultas.db
+## Conflito ##
+
+data/consultas.mv.db
