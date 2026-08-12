@@ -1,4 +1,5 @@
 package com.fiap.ec.backend_consultas.model;
+
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -7,34 +8,28 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "pacientes")
 public class Paciente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false)
     private String nome;
-
     @Column(nullable = false, unique = true)
     private String cpf;
-
     @Column(nullable = false)
     private String email;
-
     private String telefone;
-
     private LocalDate dataNascimento;
-
     private Boolean ativo;
 
     public Paciente() {
     }
 
     public Paciente(String nome, String cpf, String email,
-                    String telefone, LocalDate dataNascimento, Boolean ativo) {
+            String telefone, LocalDate dataNascimento, Boolean ativo) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -43,30 +38,60 @@ public class Paciente {
         this.ativo = ativo;
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getNome() { return nome; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getCpf() { return cpf; }
+    public String getNome() {
+        return nome;
+    }
 
-    public String getEmail() { return email; }
+    public String getCpf() {
+        return cpf;
+    }
 
-    public String getTelefone() { return telefone; }
+    public String getEmail() {
+        return email;
+    }
 
-    public LocalDate getDataNascimento() { return dataNascimento; }
+    public String getTelefone() {
+        return telefone;
+    }
 
-    public Boolean getAtivo() { return ativo; }
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
 
-    public void setNome(String nome) { this.nome = nome; }
+    public Boolean getAtivo() {
+        return ativo;
+    }
 
-    public void setCpf(String cpf) { this.cpf = cpf; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public void setEmail(String email) { this.email = email; }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-    public void setTelefone(String telefone) { this.telefone = telefone; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public void setDataNascimento(LocalDate dataNascimento) { this.dataNascimento = dataNascimento; }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
-    
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
 }
